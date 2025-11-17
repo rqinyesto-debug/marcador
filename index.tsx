@@ -141,7 +141,7 @@ const App = () => {
     
     // Initialize & Load from localStorage
     useEffect(() => {
-        aiRef.current = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        aiRef.current = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
         audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
         
         try {
